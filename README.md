@@ -46,9 +46,10 @@ Run this line of code to save a model that you trained:
 model.save("./models/PPO_BounceShots.zip")
 ```
 
-Finally, run the last code cell to have your model play 30 episodes of Peggle. Average reward, average number of pegs hit, and number of total misses for the given number of episodes will be output.
-
+Finally, run the last code cell to have your model play 30 episodes of Peggle. You can change the number of episodes.
 If you want to watch the model play, change the env's render mode to "human". (see commented-out code)
+
+Output: Average reward, average number of pegs hit, and number of total misses for the given number of episodes.
 
 
 # Running Instructions - Other Algorithms
@@ -72,6 +73,7 @@ These are the default arguments if no arguments are provided:
     num_simulations = 1
     render = False
 
+Output: The average number of pegs hit over the given number of game simulations. Any time a “total miss” happens (rarely), it is reported as well.
 
 # Running Instructions - Human Playable Game
 Simply run 'peggle_human.py'.

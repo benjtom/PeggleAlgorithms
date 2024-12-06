@@ -1,0 +1,4 @@
+from gym_peggle.wrappers.clip_reward import ClipReward
+from gym_peggle.wrappers.discrete_actions import DiscreteActions
+from gym_peggle.wrappers.reacher_weighted_reward import ReacherRewardWrapper
+from gym_peggle.wrappers.relative_position import RelativePosition

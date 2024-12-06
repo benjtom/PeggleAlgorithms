@@ -1,6 +1,5 @@
-from enum import Enum
 import gymnasium as gym
-from gymnasium.spaces import Dict, Box, Discrete, MultiDiscrete
+from gymnasium.spaces import Discrete, MultiDiscrete
 import pygame
 import numpy as np
 import math

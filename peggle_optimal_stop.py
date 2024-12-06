@@ -1,7 +1,7 @@
 import pygame
 import numpy as np
 import math
-import random
+import sys
 
 # Constants
 WIDTH, HEIGHT = 1200, 1200
@@ -430,17 +430,28 @@ class Simulation:
 
 
 
-def main():
-    simulations = 50
+def main(mode, simulations, render):
     total_pegs_hit = 0
     for i in range(simulations):
-        simulation = Simulation(render=False)
-        pegs_hit = simulation.run("optimal-stop")
-        print(f"Simulation {i} saw {pegs_hit} pegs get hit.")
+        simulation = Simulation(render)
+        pegs_hit = simulation.run(mode)
+        print(f"{mode} Simulation {i} saw {pegs_hit} pegs get hit.")
         total_pegs_hit += pegs_hit
 
     print(f"Average number of pegs hit over {simulations} simulations: {total_pegs_hit/simulations}")
     
     
 if __name__ == "__main__":
-    main()
+    mode = "optimal-stop"
+    simulations = 1
+    render = False
+
+    if len(sys.argv) > 1:
+        mode = sys.argv[1]
+    if len(sys.argv) > 2:
+        simulations = int(sys.argv[2])
+    if len(sys.argv) > 3:
+        if sys.argv[3] == "render" or sys.argv[3] == "true":
+            render = True
+
+    main(mode, simulations, render)
